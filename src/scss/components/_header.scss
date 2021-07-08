@@ -1,0 +1,158 @@
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  &__container {
+    max-width: 1920px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    @include xs {
+      padding: 20px 15px;
+    }
+  }
+
+  &__shop-nav {
+    margin-left: 250px;
+    @include md {
+      margin-left: 0;
+    }
+  }
+}
+
+.logo {
+  display: inline-block;
+  width: 117px;
+  height: 22px;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: var(--color-dark);
+    object-fit: cover;
+  }
+
+  @include xs {
+    width: 90px;
+    height: 18px;
+  }
+}
+
+.catalog-header {
+  padding-top: 38px;
+  @include xs {
+    padding-top: 0;
+  }
+}
+
+.free-delivery {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  height: 40px;
+  font-size: 10px;
+  text-transform: uppercase;
+  background-color: #111;
+
+  &__btn {
+    position: absolute;
+    z-index: 120;
+    right: 40px;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    transform: translateY(-50%);
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: var(--color-white);
+    }
+  }
+
+  @include xs {
+    display: none;
+  }
+}
+
+.card-page {
+  .header {
+    padding-top: 0;
+  }
+}
+
+.nav {
+  @include md {
+    position: fixed;
+    left: -150vw;
+    top: 0;
+    width: 80%;
+    height: 100vh;
+    padding: 10% 0;
+    background-color: #fff;
+    transition: left 0.3s;
+  }
+
+  &__close {
+    display: none;
+    @include md {
+      position: absolute;
+      display: block;
+      right: 10%;
+      top: 2%;
+    }
+  }
+}
+
+.burger {
+  display: none;
+  position: relative;
+  width: 25px;
+  height: 18px;
+
+  &::before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0%;
+    height: 2px;
+    background-color: var(--color-dark);
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0%;
+    height: 2px;
+    background-color: var(--color-dark);
+  }
+
+  &__line {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 2px;
+    background-color: var(--color-dark);
+    transform: translateY(-50%);
+  }
+
+  @include md {
+    display: block;
+  }
+}

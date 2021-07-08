@@ -1,0 +1,50 @@
+.nav {
+  &__list {
+    display: flex;
+    @include md {
+      display: block;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 45px;
+      @include md {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    @include md {
+      width: 100%;
+      display: inline-block;
+      padding: 10px 10%;
+      border-bottom: 1px solid #bfbfbf;
+      font-size: 19px;
+    }
+
+    &:hover {
+      @include md {
+        &::before {
+          opacity: 0;
+        }
+      }
+    }
+
+    &--current {
+      &::before {
+        opacity: 1;
+        transition: width 0.15s;
+        @include md {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &--visible {
+    left: 0;
+    transition: left 0.3s;
+  }
+}

@@ -1,0 +1,77 @@
+.shop-banners {
+  padding-top: 45px;
+
+  &__container {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    @include xs {
+      flex-direction: column;
+    }
+  }
+}
+
+.shop-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 50px;
+  min-height: 420px;
+  color: var(--color-white);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--color-dark);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#d70808, 0.1);
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    font-size: 48px;
+    font-weight: 500;
+    @include md {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    @include sm {
+      font-size: 28px;
+    }
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+  }
+
+  &--men {
+    background-image: url("../../img/banner1.jpg");
+  }
+
+  &--women {
+    background-image: url("../../img/banner2.jpg");
+  }
+
+  @include md {
+    padding: 30px;
+    min-height: 300px;
+  }
+  @include xs {
+    width: 100%;
+    min-height: 250px;
+  }
+}
+

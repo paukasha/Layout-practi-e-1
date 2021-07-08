@@ -1,0 +1,125 @@
+.product {
+  position: relative;
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    img {
+      max-height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+  }
+
+  &__sale {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 2px solid var(--color-dark);
+    padding: 3px 10px;
+    font: {
+      weight: 700;
+      size: 10px;
+    }
+    text-transform: uppercase;
+    color: #111;
+    z-index: 20;
+  }
+
+  &__prop {
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 8px;
+    color: var(--tundora);
+    font-size: 13px;
+
+    a {
+      &::before {
+        content: '';
+        position: relative;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  &__oldprice {
+    font-weight: 700;
+    font-size: 13px;
+    color: #959595;
+    text-decoration: line-through;
+    margin-left: 5px;
+  }
+
+  &:hover {
+    .product__image {
+      img {
+        transform: scale(1.1);
+        transition: transform 0.3s;
+      }
+    }
+
+    .product-custom__price {
+      transform: translateY(-100%);
+      transition: transform 0.3s;
+    }
+
+    .product-custom__cart {
+      transform: translateY(-100%);
+      transition: transform 0.3s;
+    }
+  }
+}
+
+.product-prop {
+  display: inline-block;
+  font: {
+    weight: 700;
+    size: 10px;
+  }
+  text-transform: uppercase;
+  color: #111;
+  padding-left: 20px;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+.product-custom {
+  height: 18px;
+  overflow: hidden;
+
+  &__price {
+    transition: transform 0.3s;
+  }
+
+  .to-cart {
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+
+  &__cart {
+    transition: transform 0.3s;
+  }
+}
+
+.new {
+  background-image: url("../../img/new.png");
+}
+
+.best {
+  background-image: url("../../img/number-one.png");
+}
